@@ -85,7 +85,7 @@ export default class HomeScreen extends React.Component {
           />
           <TextInput
             style={{width: 200, height: 40, borderColor: 'gray', borderWidth: 1, backgroundColor: 'white', marginTop: 10}}
-            placeholder='write "123456"'
+            placeholder='Write "123456"'
             secureTextEntry={true}
             value={this.state.pass}
             onChangeText={text => this.setState({pass: text})}
@@ -136,8 +136,8 @@ export default class HomeScreen extends React.Component {
               title="Send"
               onPress={() => {
                 if (this.state.notifyContent !== '') {
+                  var crrTime = new Date();
                   if (this.state.notifyType === 'Notification type A') {
-                    var crrTime = new Date();
                     this.state.typeA.unshift({
                       time: crrTime.getFullYear() + '.' + crrTime.getMonth() + '.' + crrTime.getDate() + ' ' + crrTime.getHours() + ':' + crrTime.getMinutes(),
                       content: this.state.notifyContent,
@@ -147,7 +147,7 @@ export default class HomeScreen extends React.Component {
                       notifyContent: '',
                       typeA: this.state.typeA
                     });
-                  } else if (this.state.notifyType === 'Notification type A') {
+                  } else if (this.state.notifyType === 'Notification type B') {
                     this.state.typeB.unshift({
                       time: crrTime.getFullYear() + '.' + crrTime.getMonth() + '.' + crrTime.getDate() + ' ' + crrTime.getHours() + ':' + crrTime.getMinutes(),
                       content: this.state.notifyContent,
